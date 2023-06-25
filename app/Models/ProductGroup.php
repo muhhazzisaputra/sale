@@ -11,6 +11,6 @@ class ProductGroup extends Model
 
     use HasFactory, SoftDeletes;
 
-    protected $guarded = ['id'];
+    protected $guarded = ['group_id'];
     protected $dates   = ['deleted_at'];
 }

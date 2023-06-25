@@ -58,8 +58,8 @@
 			            </li>
 			        </ul>
 		        </li>
-	          	<li class="nav-item{{ Request::is('category', 'group', 'size', 'color', 'product') ? ' menu-is-opening menu-open' : '' }}">
-		            <a href="" class="nav-link{{ Request::is('category', 'group', 'size', 'color', 'product') ? ' active' : '' }}">
+	          	<li class="nav-item{{ Request::is('category', 'product_group', 'size', 'color', 'product') ? ' menu-is-opening menu-open' : '' }}">
+		            <a href="" class="nav-link{{ Request::is('category', 'product_group', 'size', 'color', 'product') ? ' active' : '' }}">
 		              	<i class="nav-icon fas fa-copy"></i>
 		              	<p>Produk<i class="fas fa-angle-left right"></i></p>
 		            </a>
@@ -69,7 +69,7 @@
 			                  	<i class="far fa-circle nav-icon"></i>
 			                  	<p>Kategori</p>
 			                </a>
-			                <a href="/group" class="nav-link{{ Request::is('group') ? ' active' : '' }}">
+			                <a href="/product_group" class="nav-link{{ Request::is('product_group') ? ' active' : '' }}">
 			                  	<i class="far fa-circle nav-icon"></i>
 			                  	<p>Kelompok Produk</p>
 			                </a>

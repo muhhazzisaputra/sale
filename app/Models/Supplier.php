@@ -11,7 +11,7 @@ class Supplier extends Model
 
     use HasFactory, SoftDeletes;
 
-    protected $guarded = ['id'];
+    protected $guarded = ['supplier_id'];
     protected $dates   = ['deleted_at'];
 
 }

@@ -10,7 +10,7 @@ class Color extends Model {
 
     use HasFactory, SoftDeletes;
 
-    protected $guarded = ['id'];
+    protected $guarded = ['color_id'];
     protected $dates   = ['deleted_at'];
 
 }

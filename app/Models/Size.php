@@ -11,7 +11,7 @@ class Size extends Model
 
     use HasFactory, SoftDeletes;
 
-    protected $guarded = ['id'];
+    protected $guarded = ['size_id'];
     protected $dates   = ['deleted_at'];
 
 }

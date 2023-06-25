@@ -11,7 +11,7 @@ class Bank extends Model
 
     use HasFactory, SoftDeletes;
 
-    protected $guarded = ['id'];
+    protected $guarded = ['bank_id'];
     protected $dates   = ['deleted_at'];
 
 }
