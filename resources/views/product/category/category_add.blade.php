@@ -1,22 +1,27 @@
-<form id="form_save" autocomplete="off">
-    @csrf
-    <div class="form-group row">
-        <label for="code" class="col-sm-4 col-form-label">Kode<span style="color: red;">*</span></label>
-        <div class="col-sm-2">
-            <input type="text" class="form-control" name="code" id="code" maxlength="2" style="text-transform: uppercase;" required>
+<div class="modal-header">
+    <h4 class="modal-title">Input Kategori Produk</h4>
+</div>
+<div class="modal-body">
+    <form id="form_save" autocomplete="off">
+        @csrf
+        <div class="form-group row">
+            <label for="code" class="col-sm-4 col-form-label">Kode<span style="color: red;">*</span></label>
+            <div class="col-sm-2">
+                <input type="text" class="form-control" name="code" id="code" maxlength="2" style="text-transform: uppercase;" required>
+            </div>
         </div>
-    </div>
-	<div class="form-group row">
-	    <label for="name" class="col-sm-4 col-form-label">Nama Kategori<span style="color: red;">*</span></label>
-	    <div class="col-sm-5">
-	        <input type="text" class="form-control" name="name" id="name" required>
-	    </div>
-	</div>
-    <div class="modal-footer">
-        <button type="button" class="btn btn-primary" onclick="store()">Simpan</button>
-        <button type="button" class="btn btn-danger" onclick="close_modal_mid()">Batal</button>
-    </div>
-</form>
+    	<div class="form-group row">
+    	    <label for="name" class="col-sm-4 col-form-label">Nama Kategori<span style="color: red;">*</span></label>
+    	    <div class="col-sm-5">
+    	        <input type="text" class="form-control" name="name" id="name" required>
+    	    </div>
+    	</div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-primary" onclick="store()">Simpan</button>
+            <button type="button" class="btn btn-danger" onclick="close_modal_mid()">Batal</button>
+        </div>
+    </form>
+</div>
 
 <script>
     // STORE PROCESS

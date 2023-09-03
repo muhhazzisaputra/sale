@@ -1,4 +1,4 @@
- <?php
+<?php
 
 namespace App\Http\Controllers\Product;
 
@@ -30,8 +30,13 @@ class SizeController extends Controller
     public function store(Request $request) {
         $today = date("Y-m-d H:i:s");
 
-        $data['size_code']   = "02";
+        $size = Size::max('counter');
+        $kode    = ($size == null) ? 1 : $size+1;
+        $kodemax = str_pad($kode, 2, "0", STR_PAD_LEFT);
+
+        $data['size_code']   = $kodemax;
         $data['name']        = $request->name;
+        $data['counter']     = $kode;
         $data['input_user']  = auth()->user()->id;
         $data['input_date']  = $today;
         $data['update_user'] = auth()->user()->id;

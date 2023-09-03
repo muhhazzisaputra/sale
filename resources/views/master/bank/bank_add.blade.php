@@ -1,40 +1,46 @@
-<form id="form_add" autocomplete="off">
-    @csrf
-    <div class="form-group row">
-        <label for="bank_code" class="col-sm-4 col-form-label">Kode Bank<span style="color: red;">*</span></label>
-        <div class="col-sm-2">
-            <input type="text" class="form-control" name="bank_code" id="bank_code" maxlength="3" onkeyup="num_only(this)" style="text-align: right;" required>
+<div class="modal-header">
+    <h4 class="modal-title">Input Data Bank</h4>
+</div>
+<div class="modal-body">
+    <form id="form_add" autocomplete="off">
+        @csrf
+        <div class="form-group row">
+            <label for="bank_code" class="col-sm-4 col-form-label">Kode Bank<span style="color: red;">*</span></label>
+            <div class="col-sm-2">
+                <input type="text" class="form-control" name="bank_code" id="bank_code" maxlength="3" onkeyup="num_only(this)" style="text-align: right;" required>
+            </div>
         </div>
-    </div>
-    <div class="form-group row">
-        <label for="name" class="col-sm-4 col-form-label">Nama Bank<span style="color: red;">*</span></label>
-        <div class="col-sm-5">
-            <input type="text" class="form-control" name="name" id="name" required>
+        <div class="form-group row">
+            <label for="name" class="col-sm-4 col-form-label">Nama Bank<span style="color: red;">*</span></label>
+            <div class="col-sm-5">
+                <input type="text" class="form-control" name="name" id="name" required>
+            </div>
         </div>
-    </div>
-    <div class="form-group row">
-        <label for="account_number" class="col-sm-4 col-form-label">Nomor Rekening<span style="color: red;">*</span></label>
-        <div class="col-sm-5">
-            <input type="text" class="form-control" name="account_number" id="account_number" required>
+        <div class="form-group row">
+            <label for="account_number" class="col-sm-4 col-form-label">Nomor Rekening<span style="color: red;">*</span></label>
+            <div class="col-sm-5">
+                <input type="text" class="form-control" name="account_number" id="account_number" required>
+            </div>
         </div>
-    </div>
-    <div class="form-group row">
-        <label for="account_owner" class="col-sm-4 col-form-label">Pemilik Rekening<span style="color: red;">*</span></label>
-        <div class="col-sm-8">
-            <input type="text" class="form-control" name="account_owner" id="account_owner" required>
+        <div class="form-group row">
+            <label for="account_owner" class="col-sm-4 col-form-label">Pemilik Rekening<span style="color: red;">*</span></label>
+            <div class="col-sm-8">
+                <input type="text" class="form-control" name="account_owner" id="account_owner" required>
+            </div>
         </div>
-    </div>
-    <div class="form-group row">
-        <label for="branch" class="col-sm-4 col-form-label">Cabang<span style="color: red;">*</span></label>
-        <div class="col-sm-8">
-            <input type="text" class="form-control" name="branch" id="branch" required>
+        <div class="form-group row">
+            <label for="branch" class="col-sm-4 col-form-label">Cabang<span style="color: red;">*</span></label>
+            <div class="col-sm-8">
+                <input type="text" class="form-control" name="branch" id="branch" required>
+            </div>
         </div>
-    </div>
-    <div class="modal-footer">
-        <button type="button" class="btn btn-primary" onclick="store()">Simpan</button>
-        <button type="button" class="btn btn-danger" onclick="close_modal_mid()">Batal</button>
-    </div>
-</form>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-primary" onclick="store()">Simpan</button>
+            <button type="button" class="btn btn-danger" onclick="close_modal_mid()">Batal</button>
+        </div>
+    </form>
+</div>
+
 
 <script>
     // STORE PROCESS

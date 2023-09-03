@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateColorsTable extends Migration
+class CreateUnitsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,18 @@ class CreateColorsTable extends Migration
      */
     public function up()
     {
-        Schema::create('colors', function (Blueprint $table) {
-            $table->increments('color_id');
-            $table->string('color_code', 2);
+        Schema::create('units', function (Blueprint $table) {
+            $table->increments('unit_id');
+            $table->string('unit_code', 2);
             $table->string('name', 20)->unique();
+            $table->integer('counter');
             $table->softDeletes();
             $table->integer('input_user');
             $table->dateTime('input_date');
             $table->integer('update_user');
             $table->dateTime('updated_at');
-            $table->dropPrimary('color_id');
-            $table->primary(['color_code']);
+            $table->dropPrimary('unit_id');
+            $table->primary(['unit_code']);
         });
     }
 
@@ -34,6 +35,6 @@ class CreateColorsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('colors');
+        Schema::dropIfExists('units');
     }
 }

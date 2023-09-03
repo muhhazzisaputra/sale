@@ -1,49 +1,54 @@
-<form id="form_add" autocomplete="off">
-    @csrf
-    <div class="form-group row">
-        <label for="customer_code" class="col-sm-4 col-form-label">Kode Customer<span style="color: red;">*</span></label>
-        <div class="col-sm-3">
-            <input type="text" class="form-control" name="customer_code" id="customer_code" maxlength="6" style="text-transform: uppercase;" required>
+<div class="modal-header">
+    <h4 class="modal-title">Input Data Customer</h4>
+</div>
+<div class="modal-body">
+    <form id="form_add" autocomplete="off">
+        @csrf
+        <div class="form-group row">
+            <label for="customer_code" class="col-sm-4 col-form-label">Kode Customer<span style="color: red;">*</span></label>
+            <div class="col-sm-3">
+                <input type="text" class="form-control" name="customer_code" id="customer_code" maxlength="6" style="text-transform: uppercase;" required>
+            </div>
         </div>
-    </div>
-    <div class="form-group row">
-        <label for="name" class="col-sm-4 col-form-label">Nama Customer<span style="color: red;">*</span></label>
-        <div class="col-sm-8">
-            <input type="text" class="form-control" name="name" id="name" required>
+        <div class="form-group row">
+            <label for="name" class="col-sm-4 col-form-label">Nama Customer<span style="color: red;">*</span></label>
+            <div class="col-sm-8">
+                <input type="text" class="form-control" name="name" id="name" required>
+            </div>
         </div>
-    </div>
-    <div class="form-group row">
-        <label for="email" class="col-sm-4 col-form-label">Email Customer<span style="color: red;">*</span></label>
-        <div class="col-sm-8">
-            <input type="text" class="form-control" name="email" id="email" required>
+        <div class="form-group row">
+            <label for="email" class="col-sm-4 col-form-label">Email Customer<span style="color: red;">*</span></label>
+            <div class="col-sm-8">
+                <input type="text" class="form-control" name="email" id="email" required>
+            </div>
         </div>
-    </div>
-    <div class="form-group row">
-        <label for="phone" class="col-sm-4 col-form-label">No.Telp/Whatsapp<span style="color: red;">*</span></label>
-        <div class="col-sm-4">
-            <input type="text" class="form-control" name="phone" id="phone" required>
+        <div class="form-group row">
+            <label for="phone" class="col-sm-4 col-form-label">No.Telp/Whatsapp<span style="color: red;">*</span></label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" name="phone" id="phone" required>
+            </div>
         </div>
-    </div>
-    <div class="form-group row">
-        <label class="col-sm-4 col-form-label">Level<span style="color: red;">*</span></label>
-        <div class="col-sm-4">
-            <select class="form-control" name="level" id="level">
-                <option value="customer">Customer</option>
-                <option value="reseller">Reseller</option>
-            </select>
+        <div class="form-group row">
+            <label class="col-sm-4 col-form-label">Level<span style="color: red;">*</span></label>
+            <div class="col-sm-4">
+                <select class="form-control" name="level" id="level">
+                    <option value="customer">Customer</option>
+                    <option value="reseller">Reseller</option>
+                </select>
+            </div>
         </div>
-    </div>
-    <div class="form-group row">
-        <label for="address" class="col-sm-4 col-form-label">Alamat Customer<span style="color: red;">*</span></label>
-        <div class="col-sm-8">
-            <textarea class="form-control" name="address" id="address" rows="2" style="resize: none;" required></textarea>
+        <div class="form-group row">
+            <label for="address" class="col-sm-4 col-form-label">Alamat Customer<span style="color: red;">*</span></label>
+            <div class="col-sm-8">
+                <textarea class="form-control" name="address" id="address" rows="2" style="resize: none;" required></textarea>
+            </div>
         </div>
-    </div>
-    <div class="modal-footer">
-        <button type="button" class="btn btn-primary" onclick="store()">Simpan</button>
-        <button type="button" class="btn btn-danger" onclick="close_modal_mid()">Batal</button>
-    </div>
-</form>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-primary" onclick="store()">Simpan</button>
+            <button type="button" class="btn btn-danger" onclick="close_modal_mid()">Batal</button>
+        </div>
+    </form>
+</div>
 
 <script>
     // STORE PROCESS

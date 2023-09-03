@@ -15,7 +15,7 @@
         <tr>
             <td>{{ $loop->iteration }}</td>
             <td class="project-actions text-center">
-                <button class="btn btn-info btn-sm" onclick="show({{ $group->group_id }})"><i class="fas fa-pencil-alt"></i> Edit</button>
+                <button class="btn btn-primary btn-sm" onclick="show({{ $group->group_id }})"><i class="fas fa-pencil-alt"></i> Edit</button>
                 <button class="btn btn-danger btn-sm" onclick="destroy({{ $group->group_id }})"><i class="fas fa-trash"></i> Hapus</button>
             </td>
             <td class="text-left">{{ $group->group_name }}</td>

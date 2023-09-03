@@ -24,9 +24,30 @@
 	<link rel="stylesheet" href="{{ asset('adminlte/plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">
 	<!-- Sweet Alert -->
 	<link rel="stylesheet" href="{{ asset('adminlte/plugins/sweetalert/sweetalert2.css') }}">
-		<!-- jQuery -->
+
+
+	<!-- jQuery -->
 	<script src="{{ asset('adminlte/plugins/jquery/jquery.min.js') }}"></script>
 </head>
+
+<style type="text/css">
+    .bd-example-modal-lg .modal-dialog-load {
+        display: table;
+        position: relative;
+        margin: 0 auto;
+        top: calc(50% - 24px);
+    }
+  
+    .bd-example-modal-lg .modal-dialog-load .modal-content-load {
+        background-color: transparent;
+        border: none;
+    }
+
+    /*.select2 {
+    	width: 100% !important;
+    }*/
+</style>
+
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
 
@@ -45,12 +66,7 @@
 	  	<div class="modal fade" id="modal-sm">
 	        <div class="modal-dialog modal-sm">
 	          	<div class="modal-content">
-		            <div class="modal-header">
-		              	<h4 class="modal-title">Small Modal</h4>
-		            </div>
-		            <div class="modal-body" id="modal_body_sm">
-		              	<p>One fine body&hellip;</p>
-		            </div>
+		            
 	          	</div>
 	        </div>
 	    </div>
@@ -58,25 +74,78 @@
 	    <!-- Modal middle -->
 	    <div class="modal fade" id="modal-mid">
 	        <div class="modal-dialog">
-	          	<div class="modal-content">
-		            <div class="modal-header">
-		              	<h4 class="modal-title">Middle Modal</h4>
-		            </div>
-		            <div class="modal-body" id="modal_body_mid">
-		              	
-		            </div>
+	          	<div class="modal-content" id="modal_body_mid">
+		            
 	          	</div>
 	        </div>
 	    </div>
 
 	    <!-- Modal large -->
 	    <div class="modal fade" id="modal-lg">
+	        <div class="modal-dialog modal-lg">
+	          	<div class="modal-content" id="modal_body_lg">
+		            
+	          	</div>
+	        </div>
+	    </div>
+
+	    <!-- Modal xlarge -->
+	    <div class="modal fade" id="modal-xl">
+	        <div class="modal-dialog modal-xl">
+	          	<div class="modal-content" id="modal_body_xl">
+		            
+	          	</div>
+	        </div>
+	    </div>
+
+	    <!-- Modal Image -->
+	    <div class="modal fade" id="modal-img">
 	        <div class="modal-dialog">
+	          	<div class="modal-content">
+		            <div class="modal-header">
+		              	<h4 class="modal-title">Preview Gambar</h4>
+		              	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			                <span aria-hidden="true">&times;</span>
+			            </button>
+		            </div>
+		            <div class="modal-body" id="modal_body_img">
+		              	<img src="" alt="Perview Gambar" id="set_img" style="height: 230px; width: 240px;">
+		            </div>
+	          	</div>
+	        </div>
+	    </div>
+	    <!-- ==================================================================================================== -->
+	    <!-- Modal small -->
+	  	<div class="modal fade" id="modal-sm-x">
+	        <div class="modal-dialog modal-sm">
+	          	<div class="modal-content">
+		            <div class="modal-header">
+		              	<h4 class="modal-title">Small Modal</h4>
+		            </div>
+		            <div class="modal-body" id="modal_body_sm_x">
+		              	<p>One fine body&hellip;</p>
+		            </div>
+	          	</div>
+	        </div>
+	    </div>
+
+	    <!-- Modal middle -->
+	    <div class="modal fade" id="modal-mid-x">
+	        <div class="modal-dialog">
+	          	<div class="modal-content" id="modal_body_mid_x">
+		            
+	          	</div>
+	        </div>
+	    </div>
+
+	    <!-- Modal large -->
+	    <div class="modal fade" id="modal-lg-x">
+	        <div class="modal-dialog modal-lg">
 	          	<div class="modal-content">
 		            <div class="modal-header">
 		              	<h4 class="modal-title">Large Modal</h4>
 		            </div>
-		            <div class="modal-body" id="modal_body_lg">
+		            <div class="modal-body" id="modal_body_lg_x">
 		              	
 		            </div>
 	          	</div>
@@ -84,18 +153,43 @@
 	    </div>
 
 	    <!-- Modal xlarge -->
-	    <div class="modal fade" id="modal-xl">
-	        <div class="modal-dialog">
+	    <div class="modal fade" id="modal-xl-x">
+	        <div class="modal-dialog modal-xl">
 	          	<div class="modal-content">
 		            <div class="modal-header">
 		              	<h4 class="modal-title">XLarge Modal</h4>
 		            </div>
-		            <div class="modal-body" id="modal_body_xl">
+		            <div class="modal-body" id="modal_body_xl_x">
 		              	
 		            </div>
 	          	</div>
 	        </div>
 	    </div>
+
+	    <!-- Modal Load body-->
+		<div class="modal fade bd-example-modal-lg" data-backdrop="static" data-keyboard="false" tabindex="-1" id="modal-load">
+		    <div class="modal-dialog-load modal-sm-y">
+		        <div class="modal-content-load" style="width: 48px">
+		            <span class="fa fa-spinner fa-spin fa-3x"></span>
+		        </div>
+		    </div>
+		</div>
+
+		<!-- Modal load xlarge -->
+		<div class="modal fade" id="modal-xl-load" tabindex="">
+	        <div class="modal-dialog modal-xl">
+	          	<div class="modal-content">
+		            <div class="overlay" hidden>
+		                <i class="fas fa-2x fa-sync fa-spin"></i>
+		            </div>
+		            <div id="modal_body_xl_load">
+		            	
+		            </div>
+	          	</div>
+	        </div>
+	    </div>
+
+
 	</div>
   	<!-- /.content-wrapper -->
   	
@@ -147,10 +241,14 @@
 <script src="{{ asset('adminlte/plugins/datatables-buttons/js/buttons.html5.min.js') }}"></script>
 <script src="{{ asset('adminlte/plugins/datatables-buttons/js/buttons.print.min.js') }}"></script>
 <script src="{{ asset('adminlte/plugins/datatables-buttons/js/buttons.colVis.min.js') }}"></script>
+<!-- Popper -->
+<script src="{{ asset('adminlte/plugins/popper/umd/popper.min.js') }}"></script>
 <!-- Sweet Alert -->
 <script src="{{ asset('adminlte/plugins/sweetalert/sweetalert2.js') }}"></script>
 
 <script type="text/javascript">
+	const _token = $('input[name=_token]').val();
+
 	function close_modal_sm() {
 		$('#modal-sm').modal('hide');
 	}
@@ -165,6 +263,26 @@
 
 	function close_modal_xl() {
 		$('#modal-xl').modal('hide');
+	}
+	// =============================================
+	function close_modal_sm_x() {
+		$('#modal-sm-x').modal('hide');
+	}
+
+	function close_modal_mid_x() {
+		$('#modal-mid-x').modal('hide');
+	}
+
+	function close_modal_lg_x() {
+		$('#modal-lg-x').modal('hide');
+	}
+
+	function close_modal_xl_x() {
+		$('#modal-xl-x').modal('hide');
+	}
+	// ==============================================
+	function close_modal_xl_load() {
+		$('#modal-xl-load').modal('hide');
 	}
 
 	function success_notif(message) {
@@ -212,7 +330,7 @@
 	function num_only(data) {
         var isi   = data.value;
         var isi2  = $(this);
-        let hasil = formatRupiah(isi);
+        let hasil = format_number(isi);
         $(data).val(hasil);
     }
 
@@ -233,6 +351,39 @@
 
         rupiah = split[1] != undefined ? rupiah + "," + split[1] : rupiah;
         return rupiah;
+    }
+
+    function format_number(number, prefix, thousand_separator, decimal_separator) {
+        var thousand_separator = thousand_separator || ',',
+            decimal_separator  = decimal_separator || '.',
+            regex              = new RegExp('[^' + decimal_separator + '\\d]', 'g'),
+            number_string      = number.replace(regex, '').toString(),
+            split              = number_string.split(decimal_separator),
+            rest               = split[0].length % 3,
+            result             = split[0].substr(0, rest),
+            thousands          = split[0].substr(rest).match(/\d{3}/g);
+
+        if (thousands) {
+            separator  = rest ? thousand_separator : '';
+            result    += separator + thousands.join(thousand_separator);
+        }
+        result = split[1] != undefined ? result + decimal_separator + split[1] : result;
+        return prefix == undefined ? result : (result ?  result  + prefix: '');
+    }
+
+    function format_number2(number,decimal=0) {
+        num         = parseFloat(number)
+        decimal_set = parseInt(decimal)
+        var p = num.toFixed(decimal_set).split(".");
+        if(decimal_set>=1){
+            return "" + p[0].split("").reverse().reduce(function(acc, num, i, orig) {
+                return num + (num != "-" && i && !(i % 3) ? "," : "") + acc;
+            }, "") + "." + p[1];
+        } else {
+            return "" + p[0].split("").reverse().reduce(function(acc, num, i, orig) {
+                return num + (num != "-" && i && !(i % 3) ? "," : "") + acc;
+            }, "")
+        }
     }
 </script>
 </body>

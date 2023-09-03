@@ -28,7 +28,7 @@
                         <h3 class="card-title">Data {{ $title }}</h3>
                         <div class="card-tools">
                             <a href="/group/trash" class="btn btn-sm btn-warning"><i class="fa fa-trash"></i> Trash</a>
-                            <button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#group-add"><i class="fas fa-plus"></i> Tambah Data</button>
+                            <button class="btn btn-sm btn-success" data-toggle="modal" data-target="#group-add"><i class="fas fa-plus"></i> Tambah Data</button>
                         </div>
                     </div>
                     <div class="card-body" id="group-list">

@@ -1,0 +1,26 @@
+laravel-app/sale
+
+PENJUALAN GROSIR 
+customer order via wa atau sosmed atau olshop
+admin cs menerima order
+admin gudang cek stok masing masing produk/barang tersedia/kosong
+admin cs info kembali ketersediaan stok
+jika customer oke/jd beli, admin cs proses order
+admin cs kirim rincian order/total yg harus dibayar customer
+note: maks 1 jam setelah admin cs kirim rincian order
+jika sblm 1 jam sdh bayar, admin cs proses packing ke admin gudang
+jika lewat dari 1 jam blm bayar, admin cs membatalkan order
+
+proses packing oleh admin gudang
+admin gudang kirim barang atau pickup oleh kurir
+admin cs update status order ke proses kirim
+jika customer sdh terima barang, admin cs update status order selesai
+
+
+admin pembelian input barang yg akan dibeli
+jika harga sdh oke lanjut proses
+, menunggu approval pimpinan
+jika sdh approve, proses po
+
+
+

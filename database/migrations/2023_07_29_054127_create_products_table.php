@@ -14,25 +14,30 @@ class CreateProductsTable extends Migration
     public function up()
     {
         Schema::create('products', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('product_code', 8);
+            $table->increments('product_id');
+            $table->string('product_code', 13);
             $table->string('image', 100)->nullable();
             $table->string('name')->unique();
-            $table->string('category_code', 6);
-            $table->string('merk_code', 6);
+            $table->char('category_code', 2);
+            $table->char('group_code', 2);
             $table->integer('weight');
             $table->integer('stock');
             $table->integer('capital_price');
             $table->integer('selling_price');
             $table->text('description');
+            $table->string('product_sku');
+            $table->integer('unit_id');
             $table->integer('min_stock');
-            $table->smallInteger('status_variant');
+            $table->enum('status_variant', ['0', '1']);
+            $table->integer('variant_color');
+            $table->integer('variant_size');
             $table->softDeletes();
             $table->string('input_user', 4);
             $table->dateTime('input_date');
             $table->string('update_user', 4);
-            $table->dateTime('update_date');
-            $table->dropPrimary('id');
+            $table->dateTime('updated_at');
+            $table->integer('counter');
+            $table->dropPrimary('product_id');
             $table->primary(['product_code']);
         });
     }

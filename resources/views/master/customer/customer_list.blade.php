@@ -30,7 +30,7 @@
 	                	<h3 class="card-title">Data {{ $title }}</h3>
 	                	<div class="card-tools">
 	                		<a href="/customer/trash" class="btn btn-sm btn-warning"><i class="fa fa-trash"></i> Trash</a>
-			              	<button class="btn btn-sm btn-primary" onclick="add()"><i class="fas fa-plus"></i> Tambah Data</button>
+			              	<button class="btn btn-sm btn-success" onclick="add()"><i class="fas fa-plus"></i> Tambah Data</button>
 			            </div>
 	              	</div>
 	              	<div class="card-body" id="customer-list">
@@ -59,7 +59,6 @@
     function add() {
         $.get("{{ url('/customer/add') }}", {}, function(data) {
             $('#modal-mid').modal('show');
-            $('.modal-title').text('Input Data Customer');
             $('#modal_body_mid').html(data);
         });
     }

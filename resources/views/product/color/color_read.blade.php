@@ -11,7 +11,7 @@
         <tr>
             <td>{{ $loop->iteration }}</td>
             <td class="project-actions text-center">
-                <button class="btn btn-info btn-sm" onclick="show({{ $color->color_id }})"><i class="fas fa-pencil-alt"></i> Edit</button>
+                <button class="btn btn-primary btn-sm" onclick="show({{ $color->color_id }})"><i class="fas fa-pencil-alt"></i> Edit</button>
                 <button class="btn btn-danger btn-sm" onclick="delete_confirm({{ $color->color_id }}, '{{ url('/color/destroy') }}')"><i class="fas fa-trash"></i> Hapus</button>
             </td>
             <td class="text-center">{{ $color->name }}</td>
@@ -35,7 +35,6 @@
     function show(id) {
         $.get("{{ url('/color/show') }}", {id}, function(data) {
             $('#modal-mid').modal('show');
-            $('.modal-title').text('Edit Ukuran Produk');
             $('#modal_body_mid').html(data);
         });
     }

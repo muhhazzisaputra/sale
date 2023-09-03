@@ -15,7 +15,7 @@
         <tr>
             <td>{{ $loop->iteration }}</td>
             <td class="project-actions text-center">
-                <button class="btn btn-info btn-sm" onclick="show({{ $bank->bank_id }})"><i class="fas fa-pencil-alt"></i> Edit</button>
+                <button class="btn btn-primary btn-sm" onclick="show({{ $bank->bank_id }})"><i class="fas fa-pencil-alt"></i> Edit</button>
                 <button class="btn btn-danger btn-sm" onclick="delete_confirm({{ $bank->bank_id }}, '{{ url('/bank/destroy') }}')"><i class="fas fa-trash"></i> Hapus</button>
             </td>
             <td>{{ $bank->bank_code }}</td>
@@ -43,7 +43,6 @@
     function show(id) {
         $.get("{{ url('/bank/show') }}", {id}, function(data) {
             $('#modal-mid').modal('show');
-            $('.modal-title').text('Edit Data Bank');
             $('#modal_body_mid').html(data);
         });
     }

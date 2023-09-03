@@ -1,17 +1,22 @@
-<form id="form_edit" autocomplete="off">
-    @csrf
-    <input type="hidden" name="size_id" value="{{ $size->size_id }}">
-    <div class="form-group row">
-        <label for="name_edit" class="col-sm-4 col-form-label">Nama Ukuran<span style="color: red;">*</span></label>
-        <div class="col-sm-5">
-            <input type="text" class="form-control" name="name" id="name_edit" value="{{ $size->name }}" required>
+<div class="modal-header">
+    <h4 class="modal-title">Edit Ukuran Produk</h4>
+</div>
+<div class="modal-body">
+    <form id="form_edit" autocomplete="off">
+        @csrf
+        <input type="hidden" name="size_id" value="{{ $size->size_id }}">
+        <div class="form-group row">
+            <label for="name_edit" class="col-sm-4 col-form-label">Nama Ukuran<span style="color: red;">*</span></label>
+            <div class="col-sm-5">
+                <input type="text" class="form-control" name="name" id="name_edit" value="{{ $size->name }}" required>
+            </div>
         </div>
-    </div>
-    <div class="modal-footer">
-        <button type="button" class="btn btn-primary" onclick="update()">Update</button>
-        <button type="button" class="btn btn-danger" onclick="close_modal_mid()">Batal</button>
-    </div>
-</form>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-primary" onclick="update()">Update</button>
+            <button type="button" class="btn btn-danger" onclick="close_modal_mid()">Batal</button>
+        </div>
+    </form>
+</div>
 
 <script type="text/javascript">
     // UPDATE PROCESS
@@ -22,7 +27,7 @@
             $("#name_edit").focus();
             return false;
         } else {
-            if(name.length < 3) {
+            if(name.length < 2) {
                 alert('Nama ukuran minimal 3 karakter');
                 $("#name").focus();
                 return false;

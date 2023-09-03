@@ -84,7 +84,7 @@ class ProductGroupController extends Controller
 
     public function trash() {
         // mengampil data yang sudah dihapus
-        $groups = ProductGroup::onlyTrashed()->orderBy('id', 'desc')->get();
+        $groups = ProductGroup::onlyTrashed()->orderBy('group_id', 'desc')->get();
         return view('product/group/group_trash', [
             'title'  => 'Trash Kelompok Produk',
             'groups' => $groups

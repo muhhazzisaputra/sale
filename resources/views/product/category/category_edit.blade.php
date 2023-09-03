@@ -1,23 +1,28 @@
-<form id="form_edit" autocomplete="off">
-    @csrf
-    <input type="hidden" name="category_id" value="{{ $category->category_id }}">
-    <div class="form-group row">
-        <label for="code_edit" class="col-sm-4 col-form-label">Kode<span style="color: red;">*</span></label>
-        <div class="col-sm-2">
-            <input type="text" class="form-control" name="code" id="code_edit" value="{{ $category->category_code }}" maxlength="2" style="text-transform: uppercase;" required readonly>
+<div class="modal-header">
+    <h4 class="modal-title">Edit Kategori Produk</h4>
+</div>
+<div class="modal-body">
+    <form id="form_edit" autocomplete="off">
+        @csrf
+        <input type="hidden" name="category_id" value="{{ $category->category_id }}">
+        <div class="form-group row">
+            <label for="code_edit" class="col-sm-4 col-form-label">Kode<span style="color: red;">*</span></label>
+            <div class="col-sm-2">
+                <input type="text" class="form-control" name="code" id="code_edit" value="{{ $category->category_code }}" maxlength="2" style="text-transform: uppercase;" required readonly>
+            </div>
         </div>
-    </div>
-	<div class="form-group row">
-	    <label for="name_edit" class="col-sm-4 col-form-label">Nama Kategori<span style="color: red;">*</span></label>
-	    <div class="col-sm-5">
-	        <input type="text" class="form-control" name="name" id="name_edit" value="{{ $category->name }}" required>
-	    </div>
-	</div>
-    <div class="modal-footer">
-        <button type="button" class="btn btn-primary" onclick="update()">Update</button>
-        <button type="button" class="btn btn-danger" onclick="close_modal_mid()">Batal</button>
-    </div>
-</form>
+    	<div class="form-group row">
+    	    <label for="name_edit" class="col-sm-4 col-form-label">Nama Kategori<span style="color: red;">*</span></label>
+    	    <div class="col-sm-5">
+    	        <input type="text" class="form-control" name="name" id="name_edit" value="{{ $category->name }}" required>
+    	    </div>
+    	</div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-primary" onclick="update()">Update</button>
+            <button type="button" class="btn btn-danger" onclick="close_modal_mid()">Batal</button>
+        </div>
+    </form>
+</div>
 
 <script>
     // UPDATE PROCESS

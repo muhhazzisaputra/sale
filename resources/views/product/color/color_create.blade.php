@@ -1,3 +1,8 @@
+
+<div class="modal-header">
+    <h4 class="modal-title">Input Warna Produk</h4>
+</div>
+<div class="modal-body">
 <form id="form_save" autocomplete="off">
     @csrf
     <div class="form-group row">

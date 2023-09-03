@@ -1,16 +1,21 @@
-<form id="form_save" autocomplete="off">
-    @csrf
-    <div class="form-group row">
-        <label for="name" class="col-sm-4 col-form-label">Nama Ukuran<span style="color: red;">*</span></label>
-        <div class="col-sm-5">
-            <input type="text" class="form-control" name="name" id="name" required>
+<div class="modal-header">
+    <h4 class="modal-title">Input Ukuran Produk</h4>
+</div>
+<div class="modal-body">
+    <form id="form_save" autocomplete="off">
+        @csrf
+        <div class="form-group row">
+            <label for="name" class="col-sm-4 col-form-label">Nama Ukuran<span style="color: red;">*</span></label>
+            <div class="col-sm-5">
+                <input type="text" class="form-control" name="name" id="name" required>
+            </div>
         </div>
-    </div>
-    <div class="modal-footer">
-        <button type="button" class="btn btn-primary" onclick="store()">Simpan</button>
-        <button type="button" class="btn btn-danger" onclick="close_modal_mid()">Batal</button>
-    </div>
-</form>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-primary" onclick="store()">Simpan</button>
+            <button type="button" class="btn btn-danger" onclick="close_modal_mid()">Batal</button>
+        </div>
+    </form>
+</div>
 
 <script type="text/javascript">
     // STORE PROCESS
@@ -21,7 +26,7 @@
             $("#name").focus();
             return false;
         } else {
-            if(name.length < 3) {
+            if(name.length < 2) {
                 alert('Nama ukuran minimal 3 karakter');
                 $("#name").focus();
                 return false;

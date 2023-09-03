@@ -29,8 +29,13 @@ class ColorController extends Controller {
     public function store(Request $request) {
         $today = date("Y-m-d H:i:s");
 
-        $data['color_code']   = "02";
+        $color    = Color::max('counter');
+        $kode    = ($color == null) ? 1 : $color+1;
+        $kodemax = str_pad($kode, 2, "0", STR_PAD_LEFT);
+
+        $data['color_code']  = $kodemax;
         $data['name']        = $request->name;
+        $data['counter']     = $kode;
         $data['input_user']  = auth()->user()->id;
         $data['input_date']  = $today;
         $data['update_user'] = auth()->user()->id;

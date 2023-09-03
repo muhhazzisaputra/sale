@@ -11,7 +11,7 @@ class Purchase extends Model
 
     use HasFactory, SoftDeletes;
 
-    protected $guarded = ['purchase_id'];
+    protected $guarded = ['id'];
     protected $dates   = ['deleted_at'];
 
 }

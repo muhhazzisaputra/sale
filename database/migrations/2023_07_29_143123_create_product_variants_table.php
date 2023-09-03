@@ -14,17 +14,18 @@ class CreateProductVariantsTable extends Migration
     public function up()
     {
         Schema::create('product_variants', function (Blueprint $table) {
-            $table->increments('id');
-            $table->foreignId('product_code');
-            $table->foreignId('size_code');
-            $table->integer('stock');
-            $table->integer('capital_price');
-            $table->integer('selling_price');
+            $table->increments('variant_id');
+            $table->string('product_code', 13);
+            $table->string('size_code', 2);
+            $table->string('color_code', 2);
+            $table->integer('variant_stock');
+            $table->integer('variant_capital_price');
+            $table->integer('variant_selling_price');
             $table->softDeletes();
             $table->string('input_user', 4);
             $table->dateTime('input_date');
             $table->string('update_user', 4);
-            $table->dateTime('update_date');
+            $table->dateTime('updated_at');
         });
     }
 

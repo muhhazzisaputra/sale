@@ -14,10 +14,11 @@ class CreateProductImagesTable extends Migration
     public function up()
     {
         Schema::create('product_images', function (Blueprint $table) {
-            $table->increments('id');
-            $table->foreignId('product_code');
-            $table->string('image_gallery');
-            $table->timestamps();
+            $table->increments('product_image_id');
+            $table->string('product_code', 13);
+            $table->string('product_image', 100);
+            $table->integer('input_user');
+            $table->dateTime('input_date');
         });
     }
 

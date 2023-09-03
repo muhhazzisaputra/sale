@@ -32,7 +32,8 @@
 	              	<div class="card-header">
 	                	<h3 class="card-title">Data Pembelian</h3>
 	                	<div class="card-tools"> 
-			              	<a href="/purchase/create" class="btn btn-sm btn-primary"><i class="fas fa-plus"></i> Tambah Data</a>
+			              	<!-- <a href="/purchase/create" class="btn btn-sm btn-primary"><i class="fas fa-plus"></i> Tambah Data</a> -->
+			              	<button class="btn btn-sm btn-primary" onclick="purchase_create(this)"><i class="fas fa-plus"></i> Tambah Data</button>
 			            </div>
 	              	</div>
 	              	<div class="card-body">
@@ -40,6 +41,7 @@
 	                  		<thead>
 			                  	<tr>
 				                    <th class="text-center">#</th>
+				                    <th class="text-center">Opsi</th>
 				                    <th class="text-center">No PO</th>
 				                    <th class="text-center">Tanggal Transaksi</th>
 				                    <th class="text-center">Supplier</th>
@@ -50,9 +52,13 @@
 	                  			@foreach($purchases as $purchase)
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
+                                	<td class="project-actions text-center">
+                                		<button class="btn btn-sm btn-primary" onclick="purchase_edit('{{ $purchase->purchase_id }}')"><i class="fas fa-pencil-alt"></i> Edit</button>
+                                		<button class="btn btn-sm btn-primary" onclick="purchase_print('{{ $purchase->purchase_id }}')"><i class="fas fa-print"></i> Print</button>
+						            </td>
                                     <td>{{ $purchase->purchase_id }}</td>
                                     <td>{{ $purchase->purchase_date }}</td>
-                                    <td>{{ $purchase->supplier_id }}</td>
+                                    <td>{{ $purchase->supplier_code }}</td>
                                     <td>{{ $purchase->note }}</td>
                                 </tr>
                                 @endforeach
@@ -83,6 +89,20 @@
 	    });
 
   	});
+
+  	function purchase_create() {
+  		$.post("{{ url('/purchase/purchase_create') }}", {_token}, function(data) {
+  			$('#modal-xl-load').modal('show');
+            $('#modal_body_xl_load').html(data);
+  		});
+  	}
+
+  	function purchase_edit(purchase_id) {
+  		$.post("{{ url('/purchase/purchase_edit') }}", {_token, purchase_id}, function(data) {
+  			$('#modal-xl-load').modal('show');
+            $('#modal_body_xl_load').html(data);
+  		});
+  	}
 </script>
 
 @endsection

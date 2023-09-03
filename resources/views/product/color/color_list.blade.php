@@ -28,7 +28,7 @@
 	                	<h3 class="card-title">Data {{ $title }}</h3>
 	                	<div class="card-tools">
 	                		<a href="/color/trash" class="btn btn-sm btn-warning"><i class="fa fa-trash"></i> Trash</a>
-                           <button class="btn btn-sm btn-primary" onclick="add()"><i class="fas fa-plus"></i> Tambah Data</button>
+                           <button class="btn btn-sm btn-success" onclick="add()"><i class="fas fa-plus"></i> Tambah Data</button>
 			            </div>
 	              	</div>
 	              	<div class="card-body" id="color-list">
@@ -61,73 +61,5 @@
             $('#modal_body_mid').html(data);
         });
     }
-
-    // STORE PROCESS
-    function store() {
-        var name = $("#color_name").val();
-        $.ajax({
-            type: "get",
-            url: "{{ url('/color/store') }}",
-            data: "name=" + name,
-            success: function(data) {
-                $(".close").click();
-                Swal.fire(
-                  'Success!',
-                  'Data berhasil disimpan.',
-                  'success'
-                );
-                read();
-            }
-        });
-    }
-
-    // UPDATE PROCESS
-    function update(id) {
-        var name = $("#color_name").val();
-        $.ajax({
-            type: "get",
-            url: "{{ url('/color/update') }}/" + id,
-            data: "name=" + name,
-            success: function(data) {
-                $(".close").click();
-                Swal.fire(
-                  'Success!',
-                  'Data berhasil diupdate.',
-                  'success'
-                );
-                read();
-            }
-        });
-    }
-
-    function destroy(id) {
-        Swal.fire({
-            title: 'Yakin ingin menghapus data?',
-            text: "You won't be able to revert this!",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Ya, hapus!'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                $.ajax({
-                    type: "get",
-                    url: "{{ url('/color/destroy') }}/" + id,
-                    data: "name=" + name,
-                    success: function(data) {
-                        $(".close").click();
-                        Swal.fire(
-                            'Success!',
-                            'Data berhasil dihapus.',
-                            'success'
-                        );
-                        read();
-                    }
-                });
-            }
-        });
-    }
-
 </script>
 @endsection
